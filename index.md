@@ -1,5 +1,24 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+<h1>Table of Contents</h1>
+<h2><span style="color: #999999;">Mathematics</span></h2>
+<ul>
+<li><strong>Optimization</strong>
+<ul>
+<li><strong>First-Order Methods</strong></li>
+<li><strong>Second-Order Methods</strong></li>
+<li><strong>Quasi-Newton Methods</strong></li>
+</ul>
+</li>
+</ul>
+<h2><span style="color: #999999;">Statistics</span></h2>
+<ul>
+<li><strong>Decision Theory</strong></li>
+<li><strong>Information Theory</strong></li>
+</ul>
+<h2><span style="color: #999999;">Machine Learning / AI</span></h2>
+<ul>
+<li><strong>Feed-Forward Neural Networks (FFNN)</strong></li>
+<li><strong>Convolutional Neural Networks (CNN)</strong></li>
+<li><strong>Recurrent Neural Networks (RNN)</strong></li>
+<li><strong>Transformer</strong></li>
+</ul>
+<p>&nbsp;</p>
