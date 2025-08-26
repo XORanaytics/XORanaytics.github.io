@@ -16,7 +16,7 @@
 </ul>
 <h2><span style="color: #999999;">Machine Learning / AI</span></h2>
 <ul>
-<li><strong>Feed-Forward Neural Networks (FFNN)</strong></li>
+<li> <strong> <a href='/2025/08/26/feed-forward-neural-networks.md'> Feed-Forward Neural Networks (FFNN) </a> </strong> </li>
 <li><strong>Convolutional Neural Networks (CNN)</strong></li>
 <li><strong>Recurrent Neural Networks (RNN)</strong></li>
 <li><strong>Transformer</strong></li>
