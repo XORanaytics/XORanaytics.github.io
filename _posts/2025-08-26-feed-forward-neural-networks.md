@@ -55,7 +55,7 @@ $$f(x; \theta) = f_L(x; \theta_L)$$
 
 where
 
-- Pre-activation: $z_{\ell} = W_{\ell} f_{\ell-1}(x; \theta_{\ell-1}) + b_{\ell} 1_{D_{\ell}}$ where $1_{D_{\ell}}$ is a $D_{\ell}$-dimensional vector of 1s.
+- Pre-activation: ${z}_{\ell} = {W}_{\ell} {f}_{\ell-1}(x; {\theta}_{\ell-1}) + b_{\ell} 1_{{D}_{\ell}}$ where ${1}_{{D}_{\ell}}$ is a ${D}_{\ell}$-dimensional vector of 1s.
 - Neuron: $f_{\ell}(x; \theta_{\ell}) = \phi_{\ell}(z_{\ell}; V_{\ell})$
 
 such that $f_{0}(x; \theta_{0}) = x$ is the initial input,
