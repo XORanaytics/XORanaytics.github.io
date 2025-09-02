@@ -107,14 +107,14 @@ The gradient of $f(x,y)$ is:
 
 $$\nabla f = (\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}) = (2x, 2y)$$
 
-- At iteration $t = 1$, our previous $x_0 = (5,-3)$ so $\nabla f = (2*5, 2*(-3)) = (10, -6)$.
+- At iteration $t = 1$, our previous $x_0 = (5,-3)$ so $\nabla f = (10, -6)$.
 Thus, $x_1 = (5,-3) - 0.1 (10, -6) = (4, -2.4)$. Note $f(4, -2.4) = 21.76$.
 
-- At iteration $t = 2$, our previous $x_1 = (4, -2.4)$ so $\nabla f = (2*4, 2*(-2.4)) = (8, -4.8)$.
-Thus, $x_1 = (4, -2.4) - 0.1 (8, -4.8) = (3.2, -1.92)$. Note $f(3.2, -1.92) \approx 13.93$.
+- At iteration $t = 2$, our previous $x_1 = (4, -2.4)$ so $\nabla f = (8, -4.8)$.
+Thus, $x_2 = (4, -2.4) - 0.1 (8, -4.8) = (3.2, -1.92)$. Note $f(3.2, -1.92) \approx 13.93$.
 
-- At iteration $t = 3$, our previous $x_2 = (3.2, -1.92)$ so $\nabla f = (2*3.2, 2*(-1.92)) = (6.4, -3.84)$.
-Thus, $x_1 = (3.2, -1.92) - 0.1 (6.4, -3.84) = (2.56, -1.536)$. Note $f(2.56, -1.536) \approx 8.91$.
+- At iteration $t = 3$, our previous $x_2 = (3.2, -1.92)$ so $\nabla f = (6.4, -3.84)$.
+Thus, $x_3 = (3.2, -1.92) - 0.1 (6.4, -3.84) = (2.56, -1.536)$. Note $f(2.56, -1.536) \approx 8.91$.
 
 Performing more and more iterations, gradient descent should converge
 closer and closer to $(0,0)$ with $f(0,0) = 0$ as the minimum.
@@ -147,7 +147,7 @@ $$(b_{\ell})_{t+1} = (b_{\ell})_t - \eta_t [\frac{\partial L}{\partial b_{\ell}}
 
 $\frac{\partial L}{\partial W_{\ell}}$ may seem simple, but in fact, $L(\theta)$ is not directly connected to
 $W_{\ell}$ so you need to apply the derivative chain rule to get from $L$ to $f_L$ to $z_L$ to $f_{L-1}$
-to etc until you reach $z_{\ell}$, which is finally directly connected to $W_{\ell}$
+to etc until you reach $z_{\ell}$, which is finally directly connected to $W_{\ell}$:
 
 $$\frac{\partial L}{\partial W_{\ell}}
 = \frac{\partial L}{\partial f_L} \frac{\partial f_L}{\partial z_L} \frac{\partial z_L}{\partial f_{L-1}}
