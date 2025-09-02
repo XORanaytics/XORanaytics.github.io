@@ -43,7 +43,7 @@ This may seem difficult, but in fact, the equations that determine the values fo
 But for a neural network, the model $f_{\theta}$ is NOT simple so how do we minimize $L(\theta)$ in general?
 
 In fact, optimization for neural networks is still complicated.
-Before we learn how neural networks fully performly optimization, let's start with a simple example for motivation.
+Before we learn how neural networks fully perform optimization, let's start with a simple example for motivation.
 Suppose we want to minimize $f(x) = x^2$.
 
 - If I start at $x=2$, then $f(2) = 4$. To make $f(x)$ smaller, $x$ should decrease say to $x=1$ so $f(1)=1$.
@@ -60,7 +60,7 @@ the derivative is instead called the gradient).
 But wait, we want $f$ to decrease so instead of moving with the derivative,
 we need to move in the opposite direction of the derivative!
 
-The derivative of $f(x) = x^2$ is $f'(x) = 2x$ so we want to move move instead $-f'(x) = -2x$.
+The derivative of $f(x) = x^2$ is $f'(x) = 2x$ so we want to move instead $-f'(x) = -2x$.
 This means if $x > 0$ like $x = 2$, we need to move $-f'(2) = -4$ from $x = 2$.
 Ignore the 4 for now, the point is that at $x=2$, the direction we need to move is negative (i.e. left).
 A similar logic applies when $x < 0$ like $x = -2$ where the direction we need to movve is positive (i.e. right).
@@ -103,16 +103,17 @@ Let start by choosing a random value for $(x,y)$ say $x_0 = (5,-3)$ so $f(5,-3) 
 For our current knowledge, let's keep the learning rate simple at a constant $\eta_t = 0.1$.
 Let's perform gradient descent!
 
-The gradient of $f(x,y)$ is
-$\nabla f = $(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}) = (2x, 2y)$.
+The gradient of $f(x,y)$ is:
 
-- At iteration $t = 1$, our previous $x_0 = (5,-3)$ so $(\nabla f)_1 = (2*5, 2*(-3)) = (10, -6)$.
+$$\nabla f = (\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}) = (2x, 2y)$$
+
+- At iteration $t = 1$, our previous $x_0 = (5,-3)$ so $\nabla f = (2*5, 2*(-3)) = (10, -6)$.
 Thus, $x_1 = (5,-3) - 0.1 (10, -6) = (4, -2.4)$. Note $f(4, -2.4) = 21.76$.
 
-- At iteration $t = 2$, our previous $x_1 = (4, -2.4)$ so $(\nabla f)_1 = (2*4, 2*(-2.4)) = (8, -4.8)$.
+- At iteration $t = 2$, our previous $x_1 = (4, -2.4)$ so $\nabla f = (2*4, 2*(-2.4)) = (8, -4.8)$.
 Thus, $x_1 = (4, -2.4) - 0.1 (8, -4.8) = (3.2, -1.92)$. Note $f(3.2, -1.92) \approx 13.93$.
 
-- At iteration $t = 3$, our previous $x_2 = (3.2, -1.92)$ so $(\nabla f)_1 = (2*3.2, 2*(-1.92)) = (6.4, -3.84)$.
+- At iteration $t = 3$, our previous $x_2 = (3.2, -1.92)$ so $\nabla f = (2*3.2, 2*(-1.92)) = (6.4, -3.84)$.
 Thus, $x_1 = (3.2, -1.92) - 0.1 (6.4, -3.84) = (2.56, -1.536)$. Note $f(2.56, -1.536) \approx 8.91$.
 
 Performing more and more iterations, gradient descent should converge
