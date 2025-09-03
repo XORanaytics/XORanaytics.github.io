@@ -139,7 +139,9 @@ where
 And suppose we want to minimize MSE loss $L(\theta) = \frac{1}{n} \sum_{i=1}^n (y_i - f_L(x_i))^2$
 where our data is $(x_1, y_1), ..., (x_n, y_n)$ and the parameters we want to learn
 are $\theta_{\ell} = \{ W_{\ell}, b_{\ell} \}$ for $\ell = 1, ..., L$.
-Gradient descent is perform for EACH parameters $W_{\ell}$ and $b_{\ell}$ where:
+The process of inputting an observation $(x_i, y_i)$ through the model is called forward propagation.
+After forward propagation is done, we need to minimize the loss by updating each parameter using
+an optimization method. Using gradient descent for EACH parameters $W_{\ell}$ and $b_{\ell}$ where:
 
 $$(W_{\ell})_{t+1} = (W_{\ell})_t - \eta_t [\frac{\partial L}{\partial W_{\ell}}]_{W_{\ell} = (W_{\ell})_t}$$
 
@@ -160,9 +162,38 @@ when you reach the layer where the parameter is that is being updated, all the g
 and the parameter is updated by that value.
 Backpropagation also needs to be applied for $\frac{\partial L}{\partial b_{\ell}}$.
 This may seem complicated, which it is for humans, but this is all computed quite easily by computers.
+This process of repeating forward and backpropagation over and over trains the model by gradually minimizing the loss.
 
 Well, that's basically it for how feed-forward neural networks are optimized, just gradient descent and backpropagation.
 Note gradient descent is only the most basic optimizer.
 Other optimizers have been developed that have shown to optimize neural networks more efficiently.
 
+---
+
+### Bonus: Stochastic Gradient Descent
+
+A variant of gradient descent is stochastic gradient descent (SGD).
+Optimization methods are minimizing loss $L(\theta) = \frac{1}{n} \sum_{i=1}^n \ell(y_i, f_L(x_i))$
+where our data is $(x_1, y_1), ..., (x_n, y_n)$ and $\ell(y_i, f_L(x_i))$ is some loss function
+like MSE $\ell(y_i, f_L(x_i) = (y_i - f_L(x_i))^2$.
+Rather than using the entire dataset, which can be computationally expensive since
+the gradient needs to be computed for each observation $(x_i, y_i)$,
+SGD instead only chooses one observation to use. So, SGD is optimizing:
+
+$$L(\theta) = \ell(y_i, f_L(x_i))$$
+
+for some chosen $(x_i,y_i)$.
+Obviously this is a terrible metric since the parameters are being trained to fit one observation
+so if two observations are vastly different, then parameters will at best take forever to converge
+or at worst, never converge.
+Thus, SGD is generally implemented using a small batch of $M$ randomly selected observations from
+$(x_1, y_1), ..., (x_n, y_n)$ where $M \ll n$.
+This version of SGD is called miniBatch SGD, which is very commonly used especially for
+large neural networks like Large Language Models (LLMs).
+If the minibatch is $B$, then miniBatch SGD minimizes:
+
+$$L(\theta) = \frac{1}{|B|} \sum_{i \in B} \ell(y_i, f_L(x_i))$$
+
+Simply, minibatch SGD means to only train a model with a small batch of randomly selected data
+out of the entire dataset to make training the model much less computationally expensive.
 
