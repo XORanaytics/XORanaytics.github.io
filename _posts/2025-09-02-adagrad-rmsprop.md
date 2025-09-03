@@ -137,10 +137,10 @@ $$(b_{\ell})_{t+1} = (b_{\ell})_t - \eta_t [\frac{\partial L}{\partial b_{\ell}}
 
 To change gradient descent to instead AdaGrad or RMSProp is simple:
 
-$$(W_{\ell})_{t+1,i,j}
+$$(W_{\ell,i,j})_{t+1}
 = (W_{\ell,i,j})_t - \eta_t v_{W_{\ell,i,j}} [\frac{\partial L}{\partial W_{\ell,i,j}}]_{W_{\ell,i,j} = (W_{\ell,i,j})_t}$$
 
-$$(b_{\ell})_{t+1,i}
+$$(b_{\ell,i})_{t+1}
 = (b_{\ell,i})_t - \eta_t v_{b_{\ell,i}} [\frac{\partial L}{\partial b_{\ell,i}}]_{b_{\ell,i} = (b_{\ell,i})_t}$$
 
 where $v_{W_{\ell,i,j}}$ and $v_{b_{\ell,i}}$ are the corresponding values as defined above for
