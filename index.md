@@ -8,6 +8,7 @@
 <ul>
 <li><strong> <a href="/2025/09/02/gradient-descent.html"> Gradient Descent </a> </strong></li>
 <li><strong> <a href="/2025/09/02/momentum.html"> Momentum </a> </strong></li>
+<li><strong> <a href="/2025/09/02/adagrad-rmsprop.html"> AdaGrad and RMSProp </a> </strong></li>
 </ul>
 </li>
 <li><strong>Second-Order Methods</strong></li>
